@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pymediator"
-version = "0.1.0"
+version = "0.2.0"
 description = "Lightweight and extensible implementation of the Mediator pattern in Python"
 authors = ["Sergio Torrado"]
 license = "MIT"
