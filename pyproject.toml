@@ -1,10 +1,15 @@
 [tool.poetry]
 name = "pymediator"
 version = "0.1.0"
-description = ""
+description = "Lightweight and extensible implementation of the Mediator pattern in Python"
 authors = ["Sergio Torrado"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/serivt/pymediator"
+repository = "https://github.com/serivt/pymediator"
+packages = [
+  {include = "pymediator"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
