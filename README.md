@@ -1,5 +1,9 @@
 # Pymediator
 
+[![downloads](https://img.shields.io/pypi/dm/django-smooth-migrations.svg)](https://pypistats.org/packages/pymediator)
+[![versions](https://img.shields.io/pypi/pyversions/pymediator.svg)](https://pypi.python.org/pypi/pymediator)
+[![license](https://img.shields.io/github/license/serivt/pymediator.svg)](https://github.com/serivt/pymediator/blob/master/LICENSE)
+
 Provides a lightweight and extensible implementation of the Mediator pattern in Python, specifically designed for systems that follow the CQRS (Command Query Responsibility Segregation) pattern. Its architecture allows for a clear separation of command and query logic, making it ideal for clean architectures and event-driven systems.
 
 ## Install

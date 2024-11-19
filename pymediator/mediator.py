@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, Type, get_type_hints
 
 from pymediator.exceptions import HandlerProtocolViolationException
 from pymediator.handlers import Handler, Request
@@ -57,7 +57,12 @@ class Mediator(BaseMediator):
         return Mediator(registry=self.registry, dependencies=kwargs)
 
     def send(self, request: Request) -> Any:
-        handler: Handler = self._registry.get_handler(request)(**self._dependencies)
+        handler_type: Type[Handler] = self._registry.get_handler(request)
+        local_dependencies: dict = {}
+        for name, instance in get_type_hints(handler_type.__init__).items():
+            if name in self._dependencies:
+                local_dependencies[name] = self._dependencies[name]
+        handler: Handler = handler_type(**local_dependencies)
         if not isinstance(handler, Handler):
             raise HandlerProtocolViolationException(handler.__class__.__name__)
         return handler.handle(request)
